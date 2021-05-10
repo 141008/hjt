@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="shu" @keyup.enter="show2()" /><br>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					shu:''
+				},
+				methods:{
+					show2(){
+						if(this.shu<6){
+							alert('猜小了！');
+						}if(this.shu>6){
+							alert('猜大了！');
+						}else if(this.shu==6){
+						alert('恭喜您，猜对了！');
+						}
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>
