@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="mycan" width="500px" height="300px"></canvas>
+		<div id="app">
+		    	<input type="text" @keyup.enter="show()" id="tt" />
+	    </div>
+		<script type="text/javascript">
+		     let v=new Vue({
+				 el:"#app",
+				 data:{},
+				 methods:{
+					 show(){
+						 let can=document.getElementById("mycan");
+						 let con=can.getContext("2d");
+						 let TT=document.getElementById("tt").value;
+						 let img=new Image();
+						 if(TT=="cao"){
+							img.src="img/123.jpg" 
+						 }else if(TT=="guo"){
+							 img.src="img/321.jpg" 
+						 }else{ 
+							 alert("请输入正确的密钥");
+						 }
+						 img.onload=function(){
+								 con.drawImage(img,0,0); 
+						 }
+					
+					 }
+				 }
+			 })
+			 
+		</script>
+		
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
